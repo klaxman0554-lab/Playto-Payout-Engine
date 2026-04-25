@@ -1,0 +1,6 @@
+{
+  "name": "Playto Payouts",
+  "description": "A high-precision payout engine for Indian agencies with atomic ledger integrity, idempotency guards, and real-time settlement tracking.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
