@@ -1,14 +1,18 @@
 pipeline {
     agent any
 
-    tools {
-        nodejs 'NodeJS'
-    }
-
     stages {
+
         stage('Checkout') {
             steps {
                 checkout scm
+            }
+        }
+
+        stage('Node Version') {
+            steps {
+                sh 'node -v'
+                sh 'npm -v'
             }
         }
 
@@ -23,14 +27,21 @@ pipeline {
                 sh 'npm run build'
             }
         }
+
     }
 
     post {
+
         success {
             echo 'Build completed successfully.'
         }
+
         failure {
             echo 'Build failed.'
+        }
+
+        always {
+            echo 'Pipeline execution finished.'
         }
     }
 }
